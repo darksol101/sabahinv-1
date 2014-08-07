@@ -1,0 +1,31 @@
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+
+
+$lang['badparts'] = 'Bad Items';
+$lang['bills'] = 'Bills';
+$lang['bill'] = 'Bill';
+$lang['bills_list'] = 'Bills List';
+$lang['s.no.']='S.No.';
+$lang['bill_number'] = 'Bill Number';
+$lang['part_rate'] = 'Items Rate';
+$lang['generated_date'] = 'Created Date';
+$lang['sc_name'] = 'Store Name';
+$lang['status'] = 'Status';
+$lang['bill_date'] = 'Bill Date';
+$lang['customer_name'] = 'Customer Name';
+$lang['cust_vat'] = 'Customer VAT';
+$lang['total_price'] = 'Total Price';
+$lang['service_center'] = 'Store';
+$lang['customer_address']= 'Customer Address';
+$lang['part_no'] = 'Items Number';
+$lang['part_description'] = 'Items Description';
+$lang['part_quantity'] = 'Quantity';
+$lang['bill_type'] = 'Bill Type';
+$lang['discount'] = 'Discount';
+$lang['sub_total'] = 'Sub total';
+$lang['vat'] = 'VAT';
+$lang['total_price'] = 'Total Price';
+$lang['sales_date'] = 'Sales Date';
+$lang['grand_total'] = 'Grand Total';
+$lang['bill_does_not_exists'] = 'Bill does not exists.';
+$lang['not_allowed_to_view'] = 'Your are not allowed to view this bill.';

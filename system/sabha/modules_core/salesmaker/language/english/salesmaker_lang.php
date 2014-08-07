@@ -1,0 +1,17 @@
+<?php defined('BASEPATH') or exit('Direct access script is not allowed');
+$lang['salesmaker'] ='Sales Maker';
+$lang['salesmaker_name']='Sales Name';
+$lang['add_salesmaker']='Add Sales Maker';
+$lang['deductiontype'] = 'Deduction Type';
+$lang['salestatus'] = 'Sales Status';
+$lang['brands'] = 'Brands';
+$lang['models'] = 'Models';
+$lang['products'] = 'Products';
+$lang['assign'] = 'Assign Sale Maker';
+$lang['issue_date'] = 'Sales Start Date';
+$lang['expire_date'] = 'Sales Expire Date';
+$lang['cancel'] = "Cancel";
+$lang['this_record_has_been_saved'] = 'New Sale Maker is Saved';
+$lang['this_record_has_been_notsaved'] = 'Record Cannot be Saved';
+$lang['duplicate_entry'] = 'Record Already Exist';
+$lang['this_record_has_been_updated'] = 'Record has been updated';

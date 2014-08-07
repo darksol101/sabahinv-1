@@ -1,0 +1,148 @@
+<?php (defined('BASEPATH')) OR exit('No direct script access allowed');?>
+<?php
+$Cust_vat =0;
+?>
+<?php $this->load->library('wordconverter');?>
+<style type="text/css">
+.tg{width: 74mm; padding: 0px !important; margin: 0px !important;}
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:courier new;font-size:10px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg th{font-family:courier new;font-size:10px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg .tg-s6z2{text-align:center}
+.tg th,.tg td{height: 10px !important; font-size: 10px;border: 1px solid !important;}
+
+#facebox .content table th {
+background: none repeat scroll 0 0 #FFF;
+color: #000;
+border: 1px solid #000;
+font-size: 11px;
+font-weight: 700;
+padding: 8px 10px;
+font-family: courier !important;
+}
+.tg tfoot tr td{text-align: left !important;}
+.sabah_headings{ text-align: center;}
+.sabah_headings h1,.sabah_headings p{padding: 0px;}
+</style>
+<div style="width:76mm !important; font-family:courier new;; font-size:11px;">
+<div class="sabah_headings">
+  <p><img  style="margin-left: 84px;" src="<?php echo site_url('assets/style/images/cglogo2.png');?>"></p>
+  <h4 style="line-height:1; font-family:courier new; font-size:11px;">SAARC Business Association of Home Based Workers</h4>
+  <p style="line-height:1; font-family:courier new; font-size:11px;"><?php echo $bill_details->sc_name; ?></p>  
+  <p style="line-height:1; font-family:courier new; font-size:11px;"><?php echo $bill_details->sc_address; ?></p>
+  <p style="line-height:1; font-family:courier new; font-size:11px;">Telephone: <?php echo $bill_details->sc_phone1; ?></p>
+  <p style="line-height:1; font-family:courier new; font-size:11px;">Email:info@sabahnp.org / www.sabahnp.org</p>
+  <p style="line-height:1; font-family:courier new; font-size:11px;">Invoice Number: <?php echo $bill_details->bill_number; ?></p>
+  <h5 style="line-height:1; font-family:courier new; font-size:11px; font-style:bold;">INVOICE</h5>
+  <p style="float: left;">
+   <table width="100%" border="0">
+      <tr>
+        <td style="border:0 none; line-height:1; font-family:courier new;font-size:11px;">PAN NO. : 303414449</td>
+        <td style="border:0 none;float:right; text-align:right;line-height:1; font-family:courier new; font-size:11px;">Date: <?php echo $bill_details->bill_sale_date; ?></td>
+      </tr>
+      <tr>
+        <td colspan="12"><p style="line-height:1; font-family:courier new; font-size:11px;">Customer's Name: <?php echo $bill_details->bill_customer_name; ?></p></td>
+      </tr>
+      <tr>
+        <td colspan="12"><p style="line-height:1; font-family:courier new; font-size:11px;">Address: <?php echo $bill_details->bill_customer_address; ?></p></td>
+      </tr>
+    </table>
+</p>
+
+</div>
+
+
+<table class="tg">
+<thead>
+    <col width="2%" />
+    <col width="30%" />
+    <col width="8%" />
+    <col width="12%" />
+    <col width="12%" />
+
+  <tr>
+    <th style="line-height:1; font-family:courier new; font-size:11px;" class="tg-031e" rowspan="2">Sn.</th>
+    <th style="line-height:1; font-family:courier new; font-size:11px;" class="tg-031e" rowspan="2">Description</th>
+    <th style="line-height:1; font-family:courier new; font-size:11px;" class="tg-031e" rowspan="2">Qty.</th>
+    <th style="line-height:1; font-family:courier new; font-size:11px;" class="tg-031e" rowspan="2">Rate/Unit</th>
+    <th style="line-height:1; font-family:courier new; font-size:11px;" class="tg-031e" colspan="1">Amount</th>
+  </tr>
+  <tr>
+    <td style="line-height:1; font-family:courier new; font-size:11px;" class="tg-031e">Rs.</td>
+    <!-- <td class="tg-031e">Ps.</td> -->
+  </tr>
+</thead>
+  <tbody>
+  <?php
+  $i=1; 
+  foreach ($bill_part_details as $bill_part):?>
+
+    <tr>
+    <td style="line-height:1; font-family:courier new; font-size:11px;"class="tg-031e"><?php echo $i++; ?></td>
+    <td style="line-height:1; font-family:courier new; font-size:11px;"class="tg-031e"><?php echo $bill_part->part_number;?>
+    <?php $maker_detail = Modules::run('sales/sale/getMakerDetail', $sales_id, $bill_part->part_id); ?>
+    <?php if($maker_detail){
+          echo "(".ucwords($maker_detail->sale_name)." ";
+                  if($maker_detail->sale_deduction_type == 1){
+                      echo $maker_detail->sale_deduction_value."%)";
+                  }else if ($maker_detail->sale_deduction_type==2) {
+                      echo sprintf('%.2f',($maker_detail->sale_deduction_value)).")";
+                  }
+
+
+      }?>
+    </td>
+
+    <td style="line-height:1; font-family:courier new; font-size:11px;" class="tg-031e"><?php echo $bill_part->part_quantity; ?></td>
+    <td style="line-height:1; font-family:courier new; font-size:11px;" class="tg-031e"><?php echo number_format($bill_part->part_rate,2); ?></td>
+    <td style="line-height:1; font-family:courier new; font-size:11px;" class="tg-031e"><?php echo number_format(($bill_part->part_quantity*$bill_part->part_rate),2); ?></td>
+    <!-- <td class="tg-031e"></td> -->
+  </tr>
+  <?php endforeach; ?>
+
+  <tr>
+    <td style="line-height:1; font-family:courier new; font-size:11px;" class="tg-031e">&nbsp;</td>
+    <td style="line-height:1; font-family:courier new; font-size:11px;" class="tg-031e">&nbsp;</td>
+    <td style="line-height:1; font-family:courier new; font-size:11px;" class="tg-031e">&nbsp;</td>
+    <td style="line-height:1; font-family:courier new; font-size:11px;" class="tg-031e">&nbsp;</td>
+    <td style="line-height:1; font-family:courier new; font-size:11px;" class="tg-031e">&nbsp;</td><!-- 
+    <td class="tg-031e">&nbsp;</td> -->
+  </tr>
+   <tr>
+    <td style="line-height:1; font-family:courier new; font-size:11px;" class="tg-031e">&nbsp;</td>
+    <td style="line-height:1; font-family:courier new; font-size:11px;" class="tg-031e">&nbsp;</td>
+    <td style="line-height:1; font-family:courier new; font-size:11px;" class="tg-031e">&nbsp;</td>
+    <td style="line-height:1; font-family:courier new; font-size:11px;" class="tg-031e">&nbsp;</td>
+    <td style="line-height:1; font-family:courier new; font-size:11px;" class="tg-031e">&nbsp;</td><!-- 
+    <td class="tg-031e">&nbsp;</td> -->
+  </tr>
+
+  </tbody>
+
+  <tfoot>
+  <tr>
+    <td class="tg-031e"  colspan="2" rowspan="3"  style="font-size: 10px; text-align: left !important;line-height:1; font-family:courier new; font-size:11px"><label><?php echo ucwords($this->wordconverter->convert_number_to_words($bill_details->bill_rounded_grand_total_price)); ?> &nbsp;Only.</label></td> 
+    <td class="tg-031e" style="font-size: 10px; text-align: right !important;" colspan="2">Total</td>
+    <td class="tg-031e"><?php echo number_format($bill_details->total_price,2);?></td>
+    <!-- <td class="tg-s6z2"></td>
+   --></tr>
+  <tr>
+   
+    <td class="tg-031e" colspan="2" style="font-size: 10px; text-align: right !important;line-height:1; font-family:courier new; font-size:11px">
+    <?php echo (($bill_details->discount_type == 1)?'('.$bill_details->discount_amount. '%)':''); ?>Discount</td>
+    <td class="tg-031e"><?php echo number_format($bill_details->discount_value,2); ?></td>
+    <!-- <td class="tg-031e"></td>
+   --></tr>
+  <tr>
+    <td class="tg-031e" colspan="2" style="font-size: 10px; text-align: right !important;line-height:1; font-family:courier new; font-size:11px">Grand Total</td>
+    <td class="tg-031e"><?php echo number_format($bill_details->bill_rounded_grand_total_price,2); ?></td>
+    <!-- <td class="tg-031e"></td>
+   --></tr>
+  </tfoot>
+</table>
+<div style="line-height:1; font-family:courier new; font-size:11px">
+  <p><strong>Note: </strong> Goods Once sold Will not be returned. Thank You.</p>
+  <p>Received By: ............<i style="float:right;">_____________</i></p>
+  <p>Signature:   ............<i style="float:right;">For Sabah</i></p>
+</div>
+</div>

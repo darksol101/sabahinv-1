@@ -1,0 +1,10 @@
+.button,#main-content table tfoot td .bulk-actions select,.pagination a.number,form input.text-input,form textarea,form .wysiwyg,form select,.dp-popup{-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;color:#555}
+.content-box,.content-box-header,ul.content-box-tabs li a.current,.shortcut-button{border-radius:0 0 6px 6px}
+.content-box-header{-moz-border-radius-bottomleft:0;-moz-border-radius-bottomright:0;-webkit-border-bottom-left-radius:0;-webkit-border-bottom-right-radius:0;border-bottom-left-radius:0;border-bottom-right-radius:0;margin-left:2px;margin-right:2px}
+.closed-box .content-box-header{-moz-border-radius-bottomleft:6px;-moz-border-radius-bottomright:6px;-webkit-border-bottom-left-radius:6px;-webkit-border-bottom-right-radius:6px;border-bottom-left-radius:6px;border-bottom-right-radius:6px}
+ul.content-box-tabs li a.current{-moz-border-radius-bottomleft:0;-moz-border-radius-bottomright:0;-webkit-border-bottom-left-radius:0;-webkit-border-bottom-right-radius:0;border-bottom-left-radius:0;border-bottom-right-radius:0}
+.shortcut-button span{-moz-border-radius:7px;-webkit-border-radius:7px;border-radius:7px}
+div.wysiwyg ul.panel li a{opacity:0.6}
+div.wysiwyg ul.panel li a:hover,div.wysiwyg ul.panel li a.active{opacity:0.99}
+#facebox .content table td{padding:5px}
+#facebox .content table th{background:none repeat scroll 0 0 #00689C;color:#FFF;border-bottom:1px solid #EEE;font-size:11px;font-weight:700;padding:8px 10px}

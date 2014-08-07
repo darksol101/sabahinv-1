@@ -1,0 +1,23 @@
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+
+$lang['aadreminder'] = 'Add Reminder';
+$lang['remarks'] = 'Remarks';
+$lang['reminders'] = 'Reminders';
+$lang['products'] = 'Products';
+$lang['addbrand'] = 'Add Brand';
+$lang['brandname'] = 'Brand Name';
+$lang['parts'] = 'Items';
+$lang['categoryname'] = 'Category Name';
+$lang['category'] = 'Category';
+$lang['apply'] = 'Apply';
+$lang['close'] = 'Close';
+$lang['companyname'] = 'Company';
+$lang['ownership'] = 'Ownership';
+$lang['models'] = 'Models';
+$lang['productname'] = 'Product Name';
+$lang['productcat'] = 'Product Category';
+$lang['warranty'] = 'Warranty Period';
+$lang['this_record_has_been_saved'] = 'Reminder has been saved successfully';
+$lang['this_record_has_been_deleted'] = 'Reminder has been deleted successfully';
+$lang['this_record_can_not_be_saved'] = 'Reminder can not be saved';
+$lang['this_record_can_not_be_deleted'] = 'Reminder can not be deleted';

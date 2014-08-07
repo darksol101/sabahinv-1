@@ -1,0 +1,31 @@
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+
+
+$lang['company_name']='Company Name';
+$lang['add'] = 'Add';
+$lang['edit'] = 'Edit';
+$lang['remarks'] = 'Remarks';
+$lang['muliple_service_centers'] = 'Please select the one of the following Stores.';
+$lang['service_center']='Store';
+$lang['pending_reason'] = 'Pending Reason';
+$lang['date_time'] = 'Date/Time';
+$lang['modified_by'] ='Modified By';
+$lang['engineer'] = 'Engineer';
+$lang['sn'] ='S.No';
+$lang['not_allocated'] = 'Not Allocated';
+$lang['not_assigned'] = 'Not Assigned';
+$lang['engineer_remark'] = 'Engineer Remark';
+$lang['partnumber'] = 'Item Number';
+$lang['description'] = 'Item description';
+$lang['customer_price'] = 'Customer Price';
+$lang['order_id']='Order ID';
+$lang['delivered'] = 'Delivered';
+$lang['part_number'] = 'Item Number';
+$lang['quantity'] = 'Quantity';
+$lang['parts_deleted_successfully'] = 'Parts deleted successfully';
+$lang['parts_not_deleted'] = 'Parts could not be deleted';
+$lang['s.no'] = 'S.No.';
+$lang['comapany_name'] = 'Comapny Name';
+$lang['company_desc'] = 'Company Description';
+$lang['phone'] = 'Phone';
+$lang['company_address'] = 'Company Description';

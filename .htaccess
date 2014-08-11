@@ -34,7 +34,7 @@ RewriteRule ^(.*)$ index.php [F,L]
 #  is not directly related to physical file paths.
 #  Update Your ! Directory (just / for root)
 
-RewriteBase /sabahinv/
+RewriteBase /sabahims/
 #php_value date.timezone "Asia/Katmandu"
 
 ########## Begin - ! core SEF Section

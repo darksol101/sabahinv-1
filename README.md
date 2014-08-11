@@ -1,1 +1,1 @@
-hello this is readme.md file
+##Customer & Inventory Management System
